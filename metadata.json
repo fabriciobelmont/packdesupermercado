@@ -1,0 +1,6 @@
+{
+  "name": "Pacote de Áudios para Supermercados",
+  "description": "Pacote com 30 áudios prontos para supermercados: jingles, vinhetas, chamadas por setor, avisos e sons ambiente. Sem mensalidade e pronto para usar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
