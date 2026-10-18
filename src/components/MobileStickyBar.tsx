@@ -41,7 +41,7 @@ export const MobileStickyBar: React.FC = () => {
             Rádio Profissional
           </span>
           <span className="text-xs font-black text-[#171717] leading-tight">
-            A partir de <strong className="text-[#D51F2B] text-sm">R$ 27,90</strong>
+            A partir de <strong className="text-[#D51F2B] text-sm">R$ 27,00</strong>
           </span>
         </div>
 

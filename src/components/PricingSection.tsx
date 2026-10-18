@@ -66,7 +66,7 @@ export const PricingSection: React.FC = () => {
               <div className="mt-5 pb-5 border-b border-slate-200">
                 <div className="flex items-baseline gap-2">
                   <span className="text-3xl sm:text-4xl font-black text-[#171717] tracking-tight">
-                    R$ 27,90
+                    R$ 27,00
                   </span>
                   <span className="text-xs font-bold text-[#5B616B]">
                     pagamento único
@@ -94,7 +94,7 @@ export const PricingSection: React.FC = () => {
                 onClick={(e) => {
                   if (ESSENTIAL_CHECKOUT_URL === '#') {
                     e.preventDefault();
-                    handleCheckout(ESSENTIAL_CHECKOUT_URL, 'Pacote Essencial (R$ 27,90)');
+                    handleCheckout(ESSENTIAL_CHECKOUT_URL, 'Pacote Essencial (R$ 27,00)');
                   }
                 }}
                 className="w-full min-h-[50px] py-3.5 px-6 rounded-xl font-black text-sm sm:text-base text-[#171717] bg-[#FFC928] hover:bg-[#F2BD1C] active:scale-[0.98] transition-all shadow-md shadow-amber-400/20 flex items-center justify-center gap-2 text-center cursor-pointer"
@@ -110,95 +110,140 @@ export const PricingSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2: Personalizado (Destaque) */}
-          <div className="bg-[#171717] text-white rounded-3xl p-6 sm:p-8 border-2 border-[#FFC928] shadow-xl flex flex-col justify-between relative overflow-hidden">
-            {/* Badge MAIS COMPLETO */}
-            <div className="absolute top-0 right-6 -translate-y-1/2">
-              <span className="bg-[#FFC928] text-[#171717] text-[11px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
-                <Sparkles className="w-3 h-3 fill-[#171717]" />
-                MAIS COMPLETO
-              </span>
-            </div>
-
+          {/* Card 2: Personalizado (Destaque Premium) */}
+          <div className="bg-[#171717] text-white rounded-3xl p-6 sm:p-8 border-2 border-[#FFC928] shadow-xl flex flex-col justify-between relative">
             <div>
-              <div className="flex items-center justify-between gap-2 pt-1">
-                <span className="text-xs font-bold text-[#FFC928] uppercase tracking-wider">
-                  Com o Nome da Sua Loja
+              {/* 1. Badge superior "MAIS COMPLETO" */}
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFC928] text-[#171717] text-[11px] font-black uppercase tracking-wider shadow-xs">
+                  <Sparkles className="w-3 h-3 fill-[#171717]" />
+                  MAIS COMPLETO
                 </span>
-                <span className="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-0.5 rounded-md">
+
+                {/* Selo Pagamento Único no Topo */}
+                <span className="text-[11px] font-bold text-slate-300 bg-white/10 border border-white/10 px-2.5 py-1 rounded-md tracking-wider uppercase">
                   PAGAMENTO ÚNICO
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black text-white mt-3">
+              {/* 2. Linha de contexto */}
+              <div className="mb-2">
+                <span className="text-xs font-extrabold text-[#FFC928] uppercase tracking-wider block">
+                  Com o nome da sua loja
+                </span>
+              </div>
+
+              {/* 3. Título Principal */}
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                 PERSONALIZADO
               </h3>
-              <p className="text-sm text-slate-300 mt-1 font-medium">
+
+              {/* 4. Subtexto Curto */}
+              <p className="text-sm text-slate-300 mt-1.5 font-medium leading-relaxed">
                 Tudo do Essencial + sua marca dentro dos áudios.
               </p>
 
-              {/* Preço */}
-              <div className="mt-5 pb-5 border-b border-slate-800">
-                <div className="flex items-baseline gap-2">
+              {/* 5. Bloco do Preço & 6. Texto de Apoio Estratégico */}
+              <div className="mt-5 p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-white/10">
+                <div className="flex items-baseline gap-2.5">
                   <span className="text-3xl sm:text-4xl font-black text-[#FFC928] tracking-tight">
-                    R$ 97,90
+                    R$ 47,00
                   </span>
-                  <span className="text-xs font-bold text-slate-400">
+                  <span className="text-xs font-semibold text-slate-400">
                     pagamento único
                   </span>
                 </div>
+
+                {/* Texto de apoio com destaque suave */}
+                <p className="mt-2.5 pt-2.5 border-t border-white/10 text-xs sm:text-[13px] text-amber-100/90 font-medium leading-relaxed">
+                  Por apenas <strong className="text-[#FFC928] font-bold">R$ 20 a mais</strong>, leve também áudios personalizados com o nome do seu mercado.
+                </p>
               </div>
 
-              {/* Inclusos */}
-              <div className="mt-5 space-y-3">
-                <div className="text-xs font-bold text-emerald-400 flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+              {/* 7. Divisor */}
+              <div className="w-full h-px bg-slate-800 my-5"></div>
+
+              {/* 8. Benefício: Todo o Pacote Essencial incluso */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-emerald-400">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Check className="w-2.5 h-2.5 stroke-[3]" />
+                  </div>
                   <span>Todo o Pacote Essencial incluso</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 space-y-1.5">
-                  <span className="text-[11px] font-bold text-[#FFC928] uppercase tracking-wider block">
+                {/* 9. Box das Peças Personalizadas */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.05] border border-[#FFC928]/30 space-y-2.5">
+                  <span className="text-xs font-black text-[#FFC928] uppercase tracking-wider block">
                     + 10 peças personalizadas:
                   </span>
-                  <ul className="text-xs text-slate-200 space-y-1">
-                    <li>• 3 Jingles Personalizados</li>
-                    <li>• 3 Vinhetas Personalizadas</li>
-                    <li>• 3 Chamadas Personalizadas</li>
-                    <li>• 1 Aviso Institucional Personalizado</li>
+                  <ul className="space-y-2 text-xs sm:text-[13px] text-slate-200 font-medium">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928] shrink-0"></span>
+                      <span>3 Jingles Personalizados</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928] shrink-0"></span>
+                      <span>3 Vinhetas Personalizadas</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928] shrink-0"></span>
+                      <span>3 Chamadas Personalizadas</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928] shrink-0"></span>
+                      <span>1 Aviso Institucional Personalizado</span>
+                    </li>
                   </ul>
                 </div>
 
-                {/* Caixa simples: Depois da compra você envia */}
-                <div className="p-3.5 rounded-xl bg-slate-800/50 border border-slate-700/80 text-xs text-slate-300">
-                  <span className="font-bold text-white block mb-1">
+                {/* 10. Box "Depois da compra você envia" */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs text-slate-300">
+                  <span className="font-bold text-white text-xs block mb-2.5">
                     Depois da compra você envia:
                   </span>
-                  <div className="grid grid-cols-2 gap-1 text-[11px] text-slate-300">
-                    <span>• Nome do supermercado</span>
-                    <span>• Pronúncia correta</span>
-                    <span>• Cidade</span>
-                    <span>• Slogan, se possuir</span>
-                    <span className="col-span-2">• Estilo desejado</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-2 text-xs text-slate-300">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-slate-500">•</span>
+                      <span>Nome do supermercado</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-slate-500">•</span>
+                      <span>Pronúncia correta</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-slate-500">•</span>
+                      <span>Cidade</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-slate-500">•</span>
+                      <span>Slogan, se possuir</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 sm:col-span-2">
+                      <span className="text-slate-500">•</span>
+                      <span>Estilo desejado</span>
+                    </div>
                   </div>
-                  <div className="mt-2.5 pt-2 border-t border-slate-700 text-[10px] text-slate-400 flex flex-wrap gap-x-3">
+                  <div className="mt-3 pt-3 border-t border-white/10 text-[11px] text-slate-400 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <span>Personalização para 1 estabelecimento.</span>
-                    <span>1 rodada de ajustes.</span>
+                    <span className="text-slate-600 hidden sm:inline">•</span>
+                    <span>1 rodada de ajustes inclusa.</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA */}
+            {/* 11. CTA */}
             <div className="mt-8 pt-5 border-t border-slate-800">
               <a
                 href={PERSONALIZED_CHECKOUT_URL}
                 onClick={(e) => {
                   if (PERSONALIZED_CHECKOUT_URL === '#') {
                     e.preventDefault();
-                    handleCheckout(PERSONALIZED_CHECKOUT_URL, 'Pacote Personalizado (R$ 97,90)');
+                    handleCheckout(PERSONALIZED_CHECKOUT_URL, 'Pacote Personalizado (R$ 47,00)');
                   }
                 }}
-                className="w-full min-h-[50px] py-3.5 px-6 rounded-xl font-black text-sm sm:text-base text-[#171717] bg-[#FFC928] hover:bg-[#F2BD1C] active:scale-[0.98] transition-all shadow-md shadow-amber-400/25 flex items-center justify-center gap-2 text-center cursor-pointer"
+                className="w-full min-h-[52px] py-4 px-6 rounded-xl font-black text-sm sm:text-base text-[#171717] bg-[#FFC928] hover:bg-[#F2BD1C] active:scale-[0.98] transition-all shadow-md shadow-amber-400/25 flex items-center justify-center gap-2 text-center cursor-pointer"
               >
                 <span>QUERO MEU PACOTE PERSONALIZADO</span>
                 <ArrowRight className="w-4 h-4" />
@@ -223,7 +268,7 @@ export const PricingSection: React.FC = () => {
                 ESSENCIAL
               </span>
               <span className="text-lg font-black text-[#171717] block mt-0.5">
-                R$ 27,90
+                R$ 27,00
               </span>
               <p className="text-xs text-[#5B616B] mt-1 font-semibold">
                 “Quero tudo pronto.”
@@ -235,7 +280,7 @@ export const PricingSection: React.FC = () => {
                 PERSONALIZADO
               </span>
               <span className="text-lg font-black text-[#171717] block mt-0.5">
-                R$ 97,90
+                R$ 47,00
               </span>
               <p className="text-xs text-[#5B616B] mt-1 font-semibold">
                 “Quero ouvir o nome do meu mercado.”
@@ -261,12 +306,12 @@ export const PricingSection: React.FC = () => {
               onClick={(e) => {
                 if (ESSENTIAL_CHECKOUT_URL === '#') {
                   e.preventDefault();
-                  handleCheckout(ESSENTIAL_CHECKOUT_URL, 'Pacote Essencial — R$ 27,90');
+                  handleCheckout(ESSENTIAL_CHECKOUT_URL, 'Pacote Essencial — R$ 27,00');
                 }
               }}
               className="w-full sm:w-auto flex-1 min-h-[48px] py-3.5 px-5 rounded-xl font-black text-xs sm:text-sm text-[#171717] bg-[#F5F6F7] hover:bg-slate-200 border border-slate-300 transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
             >
-              <span>PACOTE ESSENCIAL — R$ 27,90</span>
+              <span>QUERO O PACOTE ESSENCIAL — R$ 27</span>
             </a>
 
             <a
@@ -274,12 +319,12 @@ export const PricingSection: React.FC = () => {
               onClick={(e) => {
                 if (PERSONALIZED_CHECKOUT_URL === '#') {
                   e.preventDefault();
-                  handleCheckout(PERSONALIZED_CHECKOUT_URL, 'Pacote Personalizado — R$ 97,90');
+                  handleCheckout(PERSONALIZED_CHECKOUT_URL, 'Pacote Personalizado — R$ 47,00');
                 }
               }}
               className="w-full sm:w-auto flex-1 min-h-[48px] py-3.5 px-5 rounded-xl font-black text-xs sm:text-sm text-[#171717] bg-[#FFC928] hover:bg-[#F2BD1C] transition-all shadow-md shadow-amber-400/20 flex items-center justify-center gap-2 cursor-pointer text-center"
             >
-              <span>PACOTE PERSONALIZADO — R$ 97,90</span>
+              <span>QUERO MEU PACOTE PERSONALIZADO — R$ 47</span>
             </a>
           </div>
         </div>
